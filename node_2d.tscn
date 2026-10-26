@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bexaiwhlriqpr"]
+
+[ext_resource type="Script" uid="uid://bvixr1kmy85c5" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://lxmktb5e3mjp" path="res://high_score.gd" id="2_0e48y"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mn2j8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ry4mf"]
+
+[node name="Node2D" type="Node2D" unique_id=1942621480]
+script = ExtResource("1_wtcfe")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=929834661]
+offset_right = 1169.0
+offset_bottom = 676.0
+color = Color(0, 0.78982455, 0.7918532, 1)
+
+[node name="Button" type="Button" parent="." unique_id=722181228]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 472.0
+offset_top = 285.0
+offset_right = 720.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.5529556, 0.55295557, 0.55295557, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_icons/icon = SubResource("CanvasTexture_mn2j8")
+text = "Start Game
+"
+icon = SubResource("ViewportTexture_ry4mf")
+
+[node name="Label" type="Label" parent="." unique_id=1864987452]
+offset_left = 546.0
+offset_top = 431.0
+offset_right = 629.0
+offset_bottom = 454.0
+text = "High Score:"
+
+[node name="High score" type="Label" parent="." unique_id=2054039323]
+offset_left = 570.0
+offset_top = 462.0
+offset_right = 610.0
+offset_bottom = 485.0
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("2_0e48y")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

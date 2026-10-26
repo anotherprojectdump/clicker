@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cwsga41scoj2d"]
+
+[ext_resource type="Texture2D" uid="uid://74mvn2y4m3no" path="res://circle.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://yaxo2eqtgell" path="res://area_2d.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://cwsqq27i1j3v4" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://cpad8rw201u7c" path="res://label.gd" id="4_fc0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mn2j8"]
+radius = 13.0
+
+[node name="Game" type="Node2D" unique_id=102122885]
+script = ExtResource("1_feb5d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=985027398]
+offset_right = 1219.0
+offset_bottom = 700.0
+mouse_filter = 2
+color = Color(0, 0.7882353, 0.7921569, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1284021869]
+position = Vector2(271, 135)
+script = ExtResource("1_e2o6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=143246916]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_80nbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=862813532]
+shape = SubResource("CircleShape2D_mn2j8")
+
+[node name="Label" type="Label" parent="." unique_id=1607240131]
+offset_right = 40.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "20"
+script = ExtResource("4_fc0e3")
